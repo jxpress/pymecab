@@ -5,10 +5,10 @@ from setuptools import setup, find_packages
 
 setup(
     name='pymecab',
-    version='1.0',
+    version='1.0.0',
     description='mecab wrapper by using natto-py',
-    author='Hiroyasu Yamada',
-    author_email='yamada@jxpress.net',
+    author='JX PRESS Corp.',
+    author_email='info@jxpress.net',
     url='https://github.com/jxpress/pymecab',
     classifiers=[
         'Development Status :: 4 - Beta',
