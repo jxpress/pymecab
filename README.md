@@ -53,7 +53,6 @@ The output of above sample codes are:
 を 助詞
 実現 名詞
 する 動詞
- BOS/EOS
- 
+ EOS
 ```
 

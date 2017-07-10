@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pymecab',
-    version='1.0.0',
+    version='1.0.1',
     description='mecab wrapper by using natto-py',
     author='JX PRESS Corp.',
     author_email='info@jxpress.net',

@@ -9,6 +9,9 @@ Token.__new__.__defaults__ = (None, None, None, None, None, None, None, None, No
 
 class PyMecab:
 
+    BOS = Token('', 'BOS', None, None, None, None, None, None, None, None)
+    EOS = Token('', 'EOS', None, None, None, None, None, None, None, None)
+
     def __init__(self, options=None, **kwargs):
         self.mecab = MeCab(options=None, kwargs=kwargs)
 
@@ -18,6 +21,9 @@ class PyMecab:
 
         (pos1, pos2, pos3, pos4, conjugation_form, conjugation_type, base_form, reading, pronunciation) = \
             list(map(lambda f: None if f == '*' else f, fs)) + [None,] * max(0, 9 - len(fs))
+
+        if surface == '' and pos1 == 'BOS/EOS':
+            return PyMecab.EOS
 
         return Token(surface, pos1, pos2, pos3, pos4, conjugation_form, conjugation_type, base_form, reading,
                             pronunciation)
