@@ -1,4 +1,5 @@
 from collections import namedtuple
+
 from natto import MeCab
 
 
@@ -30,3 +31,18 @@ class PyMecab:
 
     def tokenize(self, text):
         return [self.__convert(t) for t in self.mecab.parse(text, as_nodes=True)]
+
+
+def main():
+    import sys
+
+    mecab = PyMecab()
+
+    for line in sys.stdin:
+        for token in mecab.tokenize(line):
+            print(token.surface, token.pos1)
+
+        print('')
+
+if __name__ == "__main__":
+    main()

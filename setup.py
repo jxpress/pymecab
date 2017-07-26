@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pymecab',
-    version='1.0.1',
+    version='1.0.2',
     description='mecab wrapper by using natto-py',
     author='JX PRESS Corp.',
     author_email='info@jxpress.net',
@@ -22,5 +22,15 @@ setup(
     license='MIT License',
     install_requires=[
         'natto-py'
-    ]
+    ],
+    extras_require={
+        'test': ['pytest']
+    },
+    entry_points={
+        'console_scripts': [
+            'pymecab.console=pymecab.pymecab:main'
+        ]
+    }
+
+
 )
