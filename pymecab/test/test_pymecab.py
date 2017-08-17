@@ -1,8 +1,6 @@
 # -*- coding: UTF-8 -*-
 
-from unittest import TestCase
 from pymecab.pymecab import PyMecab
-
 
 def fs(x):
     return x if x is not None else '*' 
@@ -44,3 +42,11 @@ def test_mecab():
 
     for i in range(len(expect)):
         assert actual[i] == expect[i]
+
+
+def test_change_options():
+    text = '太郎は昨日、本を買った'
+    tokenizer = PyMecab('-N 2')
+    results = [token  for token in tokenizer.tokenize(text) if token.pos1 == 'EOS']
+    assert len(results) == 2
+
