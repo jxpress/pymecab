@@ -50,3 +50,19 @@ def test_change_options():
     results = [token  for token in tokenizer.tokenize(text) if token.pos1 == 'EOS']
     assert len(results) == 2
 
+
+def test_additional_entries():
+    from collections import namedtuple
+    DummyMecabToken = namedtuple('DummyMecabToken', ('surface', 'feature'))
+    mecab_token = DummyMecabToken(surface='三代目', feature='名詞,固有名詞,一般,*,*,*,3代目,サンダイメ,サンダイメ,[:_:919    910    8281]')
+
+    expect = '三代目\t名詞,固有名詞,一般,*,*,*,3代目,サンダイメ,サンダイメ'
+    tokenizer = PyMecab()
+    token = tokenizer._PyMecab__convert(mecab_token)
+    assert expect == token_to_str(token)
+    assert token.additional_entries == ['[:_:919    910    8281]']
+
+
+
+
+
