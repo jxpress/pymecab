@@ -2,6 +2,7 @@
 
 from pymecab.pymecab import PyMecab
 
+
 def fs(x):
     return x if x is not None else '*' 
 
@@ -37,7 +38,7 @@ def test_mecab():
     ]
 
     tokenizer = PyMecab()
-    actual = [token_to_str(token) for token in tokenizer.tokenize(text)]
+    actual = [token_to_str(token) for token in tokenizer(text)]
     assert len(actual) == len(expect)
 
     for i in range(len(expect)):
@@ -47,7 +48,7 @@ def test_mecab():
 def test_change_options():
     text = '太郎は昨日、本を買った'
     tokenizer = PyMecab('-N 2')
-    results = [token  for token in tokenizer.tokenize(text) if token.pos1 == 'EOS']
+    results = [token  for token in tokenizer(text) if token.pos1 == 'EOS']
     assert len(results) == 2
 
 

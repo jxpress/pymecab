@@ -7,5 +7,5 @@ if __name__ == "__main__":
 
     mecab = PyMecab()
 
-    for token in mecab.tokenize(text):
-        print(token.surface, token.pos1)
+    for token in mecab(text):
+        print(token, token.pos1)
