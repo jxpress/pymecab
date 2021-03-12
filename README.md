@@ -32,8 +32,6 @@ PyMecab provides you to easily access all part-of-speech features of mecab token
 The sample code is as follows:
 
 ```python
-# -*- coding: UTF-8 -*-
-
 from pymecab.pymecab import PyMecab
 
 
@@ -52,7 +50,7 @@ You can use simple console script `pymecab.console`
 
 ```
 
-> echo 'テクノロジーで「ビジネスとジャーナリズムの両立」を実現する' | pymecab.cosole
+>  echo 'テクノロジーで「ビジネスとジャーナリズムの両立」を実現する' | pymecab.console                                                                                                                                                                                                                                                                                                                                 ⎈ (minikube/leo)
 
 ```
 

@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pymecab',
-    version='1.1.0',
+    version='2.0.0',
     description='mecab wrapper by using natto-py',
     author='JX PRESS Corp.',
     author_email='info@jxpress.net',
@@ -13,7 +13,7 @@ setup(
     classifiers=[
         'Development Status :: 4 - Beta',
         'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3 :: Only',
     ],
     packages=find_packages(), 
@@ -28,9 +28,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'pymecab.console=pymecab.pymecab:main'
+            'pymecab.console=pymecab.console:main'
         ]
     }
-
-
 )
